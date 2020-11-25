@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+  margin: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(59, 59, 64);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btns-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.btns-container .btn {
+  cursor: pointer;
+  margin: 0.8em;
+  width: 18rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.btn::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: inherit;
+  z-index: -2;
+}
+
+.btn:hover::after {
+  filter: brightness(65%);
+}
+
+.btn--read:hover::after {
+  filter: saturate(190%);
+}
+
+.btn--search {
+  background-color: rgb(136, 136, 252);
+}
+
+.btn--read {
+  background-color: rgb(237, 111, 100);
+}
+
+.btn--email {
+  background-color: rgb(222, 107, 237);
+}
+
+.btn--phone {
+  background-color: rgb(65, 156, 110);
+}
+
+.btn__body {
+  margin: auto;
+}
+
+.btn__item {
+  padding: 1em 1.5em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn__icon {
+  min-width: 1.225rem;
+}
+
+.btn--read:hover .btn__icon {
+  animation-name: movement;
+  animation-duration: 650ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes movement {
+  100% {
+    transform: translateX(30%);
+  }
+}
+
+.btn--search:hover .btn__icon {
+  transform: scale(1.5);
+}
+
+.btn--email:hover .btn__icon {
+  transform: skewX(-30deg);
+}
+
+.btn--phone:hover .btn__icon {
+  animation-name: rotation;
+  animation-duration: 650ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes rotation {
+  100% {
+    transform: rotate(30deg);
+  }
+}
